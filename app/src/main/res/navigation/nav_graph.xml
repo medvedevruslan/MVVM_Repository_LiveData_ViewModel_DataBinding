@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/recyclerViewFragment_dest">
+
+    <fragment
+        android:id="@+id/recyclerViewFragment_dest"
+        android:name="com.example.mvvm_repository_livedata_viewmodel_databinding.presentation.view.recyclerviewfoods.RecyclerViewFragment"
+        android:label="RecyclerViewFragment" />
+</navigation>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="position"
+            type="Integer"/>
+
+        <variable
+            name="recyclerViewModel"
+            type="com.example.mvvm_repository_livedata_viewmodel_databinding.data.viewmodels.RecyclerViewViewModel"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:layout_marginTop="5dp"
+        android:focusable="true"
+        android:onClick="@{(text) -> recyclerViewModel.showName(position)}"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/dimen11"
+            android:padding="@dimen/dimen20"
+            app:cardElevation="@dimen/elevation_2"
+            app:cardCornerRadius="@dimen/dimen11"
+            android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:id="@+id/bank_details"
+                app:layout_constraintTop_toBottomOf="@+id/tv_transfer_from_account"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/dimen90"
+                android:padding="@dimen/padding20"
+                >
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="@dimen/dimen50"
+                    android:layout_height="50dp"
+                    tools:layout_height="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:setImageResourceWithCoil="@{recyclerViewModel.getFoodImage(position)}"
+                    android:visibility="visible"
+                    />
+                <!--android:src="@{recyclerViewModel.getFoodImage(position)}"-->
+
+                <TextView
+                    android:id="@+id/address_line_1"
+                    android:layout_width="@dimen/dimen0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin15"
+                    android:layout_marginEnd="@dimen/margin10"
+                    android:textColor="@color/black"
+                    android:text="@{recyclerViewModel.getFoodName(position)}"
+                    android:textSize="@dimen/textSize14"
+                    app:layout_constraintEnd_toStartOf="@+id/rightarrow"
+                    app:layout_constraintStart_toEndOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <ImageView
+                    android:id="@+id/rightarrow"
+                    android:layout_width="@dimen/dimen11"
+                    android:layout_marginStart="@dimen/margin15"
+                    android:layout_marginEnd="@dimen/margin5"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/textSize12"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_height="@dimen/dimen20" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
