@@ -1,4 +1,4 @@
-package com.example.mvvm_repository_livedata_viewmodel_databinding.data.viewmodels
+package com.example.mvvm_repository_livedata_viewmodel_databinding.viewmodels
 
 import android.app.Application
 import android.util.Log

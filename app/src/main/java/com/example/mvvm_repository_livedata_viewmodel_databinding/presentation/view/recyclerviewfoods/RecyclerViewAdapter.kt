@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm_repository_livedata_viewmodel_databinding.BR
 import com.example.mvvm_repository_livedata_viewmodel_databinding.R
-import com.example.mvvm_repository_livedata_viewmodel_databinding.data.viewmodels.RecyclerViewViewModel
+import com.example.mvvm_repository_livedata_viewmodel_databinding.viewmodels.RecyclerViewViewModel
 import com.example.mvvm_repository_livedata_viewmodel_databinding.databinding.ItemRecyclerBinding
 
 class RecyclerViewAdapter(private val viewModel: RecyclerViewViewModel) :
@@ -24,8 +24,9 @@ class RecyclerViewAdapter(private val viewModel: RecyclerViewViewModel) :
     }
 
     override fun getItemCount(): Int {
-        if (viewModel != null && viewModel.foodItemsDTO != null && viewModel.foodItemsDTO
-                .size > 0
+        if (viewModel != null &&
+            viewModel.foodItemsDTO != null &&
+            viewModel.foodItemsDTO.size > 0
         ) {
             return viewModel.foodItemsDTO.size
         }
@@ -34,6 +35,7 @@ class RecyclerViewAdapter(private val viewModel: RecyclerViewViewModel) :
 
     inner class SampleViewHolder(private val binding: ItemRecyclerBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         fun bind(position: Int) {
             binding.setVariable(BR.recyclerViewModel, viewModel)
             binding.setVariable(BR.position, position)

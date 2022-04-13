@@ -11,7 +11,7 @@
 
         <variable
             name="recyclerViewModel"
-            type="com.example.mvvm_repository_livedata_viewmodel_databinding.data.viewmodels.RecyclerViewViewModel"/>
+            type="com.example.mvvm_repository_livedata_viewmodel_databinding.viewmodels.RecyclerViewViewModel"/>
 
     </data>
 
@@ -50,7 +50,6 @@
                     app:setImageResourceWithCoil="@{recyclerViewModel.getFoodImage(position)}"
                     android:visibility="visible"
                     />
-                <!--android:src="@{recyclerViewModel.getFoodImage(position)}"-->
 
                 <TextView
                     android:id="@+id/address_line_1"

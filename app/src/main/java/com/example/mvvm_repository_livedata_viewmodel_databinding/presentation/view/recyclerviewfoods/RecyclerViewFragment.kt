@@ -2,10 +2,11 @@ package com.example.mvvm_repository_livedata_viewmodel_databinding.presentation.
 
 import android.app.Application
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.example.mvvm_repository_livedata_viewmodel_databinding.data.viewmodels.RecyclerViewViewModel
+import com.example.mvvm_repository_livedata_viewmodel_databinding.viewmodels.RecyclerViewViewModel
 import com.example.mvvm_repository_livedata_viewmodel_databinding.databinding.FragmentRecyclerViewBinding
 
 
@@ -13,7 +14,7 @@ class  RecyclerViewFragment : Fragment() {
 
     private lateinit var binding: FragmentRecyclerViewBinding
     private val viewModel by lazy { RecyclerViewViewModel(application = Application()) }
-    val _adapter by lazy { RecyclerViewAdapter(viewModel) }
+    private val _adapter by lazy { RecyclerViewAdapter(viewModel) }
 
 
 
@@ -22,6 +23,7 @@ class  RecyclerViewFragment : Fragment() {
         savedInstanceState: Bundle?
     ) = FragmentRecyclerViewBinding.inflate(inflater, container, false).run {
 
+        Log.d("developer12", viewModel.toString())
         binding = this
         adapter = _adapter
         root

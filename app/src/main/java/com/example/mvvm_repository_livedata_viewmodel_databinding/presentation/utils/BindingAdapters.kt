@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import coil.transform.CircleCropTransformation
 
 @BindingAdapter(value = ["setAdapter", "gridLayoutManagerValue", "vertical"], requireAll = false)
 fun bindRecyclerViewAdapter(
